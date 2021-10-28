@@ -11,6 +11,50 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+  .App {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .App .column {
+    width: 95%;
+    text-align: center;
+  }
+
+  .droppable-col {
+    width: 100%;
+    height: 50px;
+  }
+  .column {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+  }
+
+  .column h3 {
+    text-align: center;
+  }
+
+  #High div {
+    background-color: red;
+  }
+
+  #Medium div {
+    background-color: orange;
+  }
+
+  #Low div {
+    background-color: none;
+  }
+
+  #High div div,
+  #Medium div div,
+  #Low div div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 }
 
 .App-header {
