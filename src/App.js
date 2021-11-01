@@ -5,15 +5,15 @@ import _ from "lodash";
 import { v4 } from "uuid";
 
 function App() {
-  const [input, setInput] = useState({
-    zendesk: "",
-    title: "",
-    jira: "",
-    date_created: "",
-    customer: "",
-    current_status: "",
-    comment: "",
-  });
+  const [zendesk, setZendesk] = useState("");
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [jira, setJira] = useState("");
+  const [dateCreated, setDateCreated] = useState("");
+  const [customer, setCustomer] = useState("");
+  const [currentStatus, setCurrentStatus] = useState("");
+  const [comment, setComment] = useState("");
+
   const [state, setState] = useState({
     todo: {
       title: "High",
@@ -41,13 +41,15 @@ function App() {
       return;
     }
 
+    // Creating a copy of item before removing it from state
     const itemCopy = { ...state[source.droppableId].items[source.index] };
 
     setState((prev) => {
       prev = { ...prev };
-
+      // Remove from previous items array
       prev[source.droppableId].items.splice(source.index, 1);
 
+      // Adding to new items array location
       prev[destination.droppableId].items.splice(
         destination.index,
         0,
@@ -59,6 +61,7 @@ function App() {
   };
 
   const addItem = () => {
+    console.log(zendesk, state);
     setState((prev) => {
       return {
         ...prev,
@@ -67,7 +70,14 @@ function App() {
           items: [
             {
               id: v4(),
-              input: input,
+              zendesk: zendesk,
+              title: title,
+              description: description,
+              jira: jira,
+              dateCreated: dateCreated,
+              customer: customer,
+              currentStatus: currentStatus,
+              comment: comment,
             },
             ...prev.todo.items,
           ],
@@ -75,66 +85,93 @@ function App() {
       };
     });
 
-    const handleChange = (e) => {
-      setState({
-        ...input,
-        [e.target.name]: e.target.value,
-      });
-    };
+    setZendesk("");
+    setTitle("");
+    setDescription("");
+    setJira("");
+    setDateCreated("");
+    setCustomer("");
+    setCurrentStatus("");
+    setComment("");
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    console.log({ input });
-    setInput("");
+    let item = {};
+    item.zendesk = zendesk;
+    item.title = title;
+    item.description = description;
+    item.jira = jira;
+    item.dateCreated = dateCreated;
+    item.customer = customer;
+    item.setCurrentStatus = currentStatus;
+    addItem();
+    console.log(item);
   };
 
   return (
     <div className="App">
+      <header>Welcome to Orderly</header>
       <div>
-        <div>
-          <input
-            type="text"
-            name="zendesk"
-            value={input.zendesk}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="title"
-            value={input.title}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="description"
-            value={input.description}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="date_created"
-            value={input.date_created}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="customer"
-            value={input.customer}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="current_status"
-            value={input.current_status}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="comment"
-            value={input.comment}
-            onChange={handleChange}
-          />
-
-          <button onClick={addItem}>Add</button>
-        </div>
+        <form className="submitForm" onSubmit={handleSubmit}>
+          <div>
+            <input
+              type="text"
+              value={zendesk}
+              onChange={(e) => setZendesk(e.target.value)}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              value={jira}
+              onChange={(e) => setJira(e.target.value)}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              value={dateCreated}
+              onChange={(e) => setDateCreated(e.target.value)}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              value={customer}
+              onChange={(e) => setCustomer(e.target.value)}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              value={currentStatus}
+              onChange={(e) => setCurrentStatus(e.target.value)}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+            />
+          </div>
+          <button type="submit">Add</button>
+        </form>
       </div>
 
       <DragDropContext onDragEnd={handleDragEnd}>
@@ -168,7 +205,10 @@ function App() {
                                   {...provided.draggableProps}
                                   {...provided.dragHandleProps}
                                 >
-                                  {el.input}
+                                  {el.zendesk}
+                                  {el.title}
+                                  {el.description}
+                                  {el.jira}
                                 </div>
                               );
                             }}
