@@ -20,17 +20,27 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-bottom: 90px;
+  margin-bottom: 30px;
+}
+
+form {
+  margin-bottom: 50px;
 }
 
 .submitForm div {
   display: flex;
   flex-direction: column;
 }
+.iteminput {
+  width: 9%;
+}
+.itemAdd button {
+  height: 35px;
+  font-size: 20px;
+}
 
 .item {
   margin: 5px;
-  /* width: 8%; */
 }
 
 .itemdivs {
@@ -38,6 +48,11 @@ code {
   flex-direction: row;
   justify-content: space-around;
   border-radius: 30px;
+}
+
+.itemdivs div {
+  width: 9%;
+  overflow-wrap: break-word;
 }
 
 .inputField {

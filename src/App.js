@@ -115,89 +115,93 @@ function App() {
     <div className="App">
       <header>Welcome to Orderly</header>
       <div>
-        <form className="submitForm" onSubmit={handleSubmit}>
-          <div className="item">
-            <h4>Zendesk</h4>
-            <input
-              className="inputField"
-              type="text"
-              value={zendesk}
-              onChange={(e) => setZendesk(e.target.value)}
-            />
+        <form onSubmit={handleSubmit}>
+          <div className="submitForm">
+            <div className="iteminput">
+              <h4>Zendesk</h4>
+              <input
+                className="inputField"
+                type="text"
+                value={zendesk}
+                onChange={(e) => setZendesk(e.target.value)}
+              />
+            </div>
+            <div className="iteminput">
+              <h4>Title</h4>
+              <input
+                className="inputField"
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+            </div>
+            <div className="iteminput">
+              <h4>Description</h4>
+              <input
+                className="inputField"
+                type="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </div>
+            <div className="iteminput">
+              <h4>Jira</h4>
+              <input
+                className="inputField"
+                type="text"
+                value={jira}
+                onChange={(e) => setJira(e.target.value)}
+              />
+            </div>
+            <div className="iteminput">
+              <h4>Date Created</h4>
+              <input
+                className="inputField"
+                type="text"
+                value={dateCreated}
+                onChange={(e) => setDateCreated(e.target.value)}
+              />
+            </div>
+            <div className="iteminput">
+              <h4>Customer</h4>
+              <input
+                className="inputField"
+                type="text"
+                value={customer}
+                onChange={(e) => setCustomer(e.target.value)}
+              />
+            </div>
+            <div className="iteminput">
+              <h4>Current Status</h4>
+              <input
+                className="inputField"
+                type="text"
+                value={currentStatus}
+                onChange={(e) => setCurrentStatus(e.target.value)}
+              />
+            </div>
+            <div className="iteminput">
+              <h4>SDM</h4>
+              <input
+                className="inputField"
+                type="text"
+                value={sdm}
+                onChange={(e) => setSDM(e.target.value)}
+              />
+            </div>
+            <div className="iteminput">
+              <h4>Comment</h4>
+              <input
+                className="inputField"
+                type="text"
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+              />
+            </div>
           </div>
-          <div className="item">
-            <h4>Title</h4>
-            <input
-              className="inputField"
-              type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
+          <div className="itemAdd">
+            <button type="submit">Add Item</button>
           </div>
-          <div className="item">
-            <h4>Description</h4>
-            <input
-              className="inputField"
-              type="text"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-          </div>
-          <div className="item">
-            <h4>Jira</h4>
-            <input
-              className="inputField"
-              type="text"
-              value={jira}
-              onChange={(e) => setJira(e.target.value)}
-            />
-          </div>
-          <div className="item">
-            <h4>Date Created</h4>
-            <input
-              className="inputField"
-              type="text"
-              value={dateCreated}
-              onChange={(e) => setDateCreated(e.target.value)}
-            />
-          </div>
-          <div className="item">
-            <h4>Customer</h4>
-            <input
-              className="inputField"
-              type="text"
-              value={customer}
-              onChange={(e) => setCustomer(e.target.value)}
-            />
-          </div>
-          <div className="item">
-            <h4>Current Status</h4>
-            <input
-              className="inputField"
-              type="text"
-              value={currentStatus}
-              onChange={(e) => setCurrentStatus(e.target.value)}
-            />
-          </div>
-          <div className="item">
-            <h4>SDM</h4>
-            <input
-              className="inputField"
-              type="text"
-              value={sdm}
-              onChange={(e) => setSDM(e.target.value)}
-            />
-          </div>
-          <div className="item">
-            <h4>Comment</h4>
-            <input
-              className="inputField"
-              type="text"
-              value={comment}
-              onChange={(e) => setComment(e.target.value)}
-            />
-          </div>
-          <button type="submit">Add</button>
         </form>
       </div>
 
@@ -214,6 +218,7 @@ function App() {
                 <div>Date Created</div>
                 <div>Customer</div>
                 <div>Current Status</div>
+                <div>SDM</div>
                 <div>Comment</div>
               </div>
 
@@ -244,30 +249,15 @@ function App() {
                                   {...provided.dragHandleProps}
                                 >
                                   <div className="itemdivs">
-                                    <div>
-                                      <div>{el.zendesk}</div>
-                                    </div>
-                                    <div>
-                                      <div>{el.title}</div>
-                                    </div>
-                                    <div>
-                                      <div>{el.description}</div>
-                                    </div>
-                                    <div>
-                                      <div>{el.jira}</div>
-                                    </div>
-                                    <div>
-                                      <div>{el.dateCreated}</div>
-                                    </div>
-                                    <div>
-                                      <div>{el.customer}</div>
-                                    </div>
-                                    <div>
-                                      <div>{el.currentStatus}</div>
-                                    </div>
-                                    <div>
-                                      <div>{el.comment}</div>
-                                    </div>
+                                    <div>{el.zendesk}</div>
+                                    <div>{el.title}</div>
+                                    <div>{el.description}</div>
+                                    <div>{el.jira}</div>
+                                    <div>{el.dateCreated}</div>
+                                    <div>{el.customer}</div>
+                                    <div>{el.currentStatus}</div>
+                                    <div>{el.sdm}</div>
+                                    <div>{el.comment}</div>
                                   </div>
                                 </div>
                               );

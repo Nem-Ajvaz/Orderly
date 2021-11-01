@@ -37,15 +37,15 @@
   }
 
   #High div {
-    background-color: tomato;
+    background-color: #e9573f;
   }
 
   #Medium div {
-    background-color: orange;
+    background-color: #fcbb42;
   }
 
   #Low div {
-    background-color: none;
+    background-color: #48cfad;
   }
 
   #High div div,
