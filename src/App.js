@@ -4,22 +4,20 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import _ from "lodash";
 import { v4 } from "uuid";
 
-const item = {
-  id: v4(),
-  name: "Clean the house",
-};
-
-const item2 = {
-  id: v4(),
-  name: "Wash the car",
-};
-
 function App() {
-  const [text, setText] = useState("");
+  const [input, setInput] = useState({
+    zendesk: "",
+    title: "",
+    jira: "",
+    date_created: "",
+    customer: "",
+    current_status: "",
+    comment: "",
+  });
   const [state, setState] = useState({
     todo: {
       title: "High",
-      items: [item, item2],
+      items: [],
     },
     "in-progress": {
       title: "Medium",
@@ -43,15 +41,13 @@ function App() {
       return;
     }
 
-    // Creating a copy of item before removing it from state
     const itemCopy = { ...state[source.droppableId].items[source.index] };
 
     setState((prev) => {
       prev = { ...prev };
-      // Remove from previous items array
+
       prev[source.droppableId].items.splice(source.index, 1);
 
-      // Adding to new items array location
       prev[destination.droppableId].items.splice(
         destination.index,
         0,
@@ -67,11 +63,11 @@ function App() {
       return {
         ...prev,
         todo: {
-          title: "Todo",
+          title: "High",
           items: [
             {
               id: v4(),
-              name: text,
+              input: input,
             },
             ...prev.todo.items,
           ],
@@ -79,19 +75,68 @@ function App() {
       };
     });
 
-    setText("");
+    const handleChange = (e) => {
+      setState({
+        ...input,
+        [e.target.name]: e.target.value,
+      });
+    };
+
+    console.log({ input });
+    setInput("");
   };
 
   return (
     <div className="App">
       <div>
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-        <button onClick={addItem}>Add</button>
+        <div>
+          <input
+            type="text"
+            name="zendesk"
+            value={input.zendesk}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="title"
+            value={input.title}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="description"
+            value={input.description}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="date_created"
+            value={input.date_created}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="customer"
+            value={input.customer}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="current_status"
+            value={input.current_status}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="comment"
+            value={input.comment}
+            onChange={handleChange}
+          />
+
+          <button onClick={addItem}>Add</button>
+        </div>
       </div>
+
       <DragDropContext onDragEnd={handleDragEnd}>
         {_.map(state, (data, key) => {
           return (
@@ -114,7 +159,6 @@ function App() {
                             draggableId={el.id}
                           >
                             {(provided, snapshot) => {
-                              console.log(snapshot);
                               return (
                                 <div
                                   className={`item ${
@@ -124,7 +168,7 @@ function App() {
                                   {...provided.draggableProps}
                                   {...provided.dragHandleProps}
                                 >
-                                  {el.name}
+                                  {el.input}
                                 </div>
                               );
                             }}
