@@ -12,12 +12,46 @@ code {
     monospace;
 }
 
+.column {
+  min-height: 350px;
+  align-items: center;
+}
 .submitForm {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-bottom: 90px;
 }
 
 .submitForm div {
-  display: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  margin: 5px;
+  /* width: 8%; */
+}
+
+.itemdivs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 30px;
+}
+
+.inputField {
+  height: 40px;
+  font-size: 15px;
+  padding-left: 10px;
+}
+
+.itemList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 95%;
+}
+.itemList div {
+  width: 8%;
 }

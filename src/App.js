@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import "./index.css";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import _ from "lodash";
 import { v4 } from "uuid";
@@ -12,6 +13,7 @@ function App() {
   const [dateCreated, setDateCreated] = useState("");
   const [customer, setCustomer] = useState("");
   const [currentStatus, setCurrentStatus] = useState("");
+  const [sdm, setSDM] = useState("");
   const [comment, setComment] = useState("");
 
   const [state, setState] = useState({
@@ -41,15 +43,13 @@ function App() {
       return;
     }
 
-    // Creating a copy of item before removing it from state
     const itemCopy = { ...state[source.droppableId].items[source.index] };
 
     setState((prev) => {
       prev = { ...prev };
-      // Remove from previous items array
+
       prev[source.droppableId].items.splice(source.index, 1);
 
-      // Adding to new items array location
       prev[destination.droppableId].items.splice(
         destination.index,
         0,
@@ -92,6 +92,7 @@ function App() {
     setDateCreated("");
     setCustomer("");
     setCurrentStatus("");
+    setSDM("");
     setComment("");
   };
   const handleSubmit = (e) => {
@@ -104,7 +105,8 @@ function App() {
     item.jira = jira;
     item.dateCreated = dateCreated;
     item.customer = customer;
-    item.setCurrentStatus = currentStatus;
+    item.currentStatus = currentStatus;
+    item.sdm = sdm;
     addItem();
     console.log(item);
   };
@@ -114,57 +116,82 @@ function App() {
       <header>Welcome to Orderly</header>
       <div>
         <form className="submitForm" onSubmit={handleSubmit}>
-          <div>
+          <div className="item">
+            <h4>Zendesk</h4>
             <input
+              className="inputField"
               type="text"
               value={zendesk}
               onChange={(e) => setZendesk(e.target.value)}
             />
           </div>
-          <div>
+          <div className="item">
+            <h4>Title</h4>
             <input
+              className="inputField"
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
-          <div>
+          <div className="item">
+            <h4>Description</h4>
             <input
+              className="inputField"
               type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-          <div>
+          <div className="item">
+            <h4>Jira</h4>
             <input
+              className="inputField"
               type="text"
               value={jira}
               onChange={(e) => setJira(e.target.value)}
             />
           </div>
-          <div>
+          <div className="item">
+            <h4>Date Created</h4>
             <input
+              className="inputField"
               type="text"
               value={dateCreated}
               onChange={(e) => setDateCreated(e.target.value)}
             />
           </div>
-          <div>
+          <div className="item">
+            <h4>Customer</h4>
             <input
+              className="inputField"
               type="text"
               value={customer}
               onChange={(e) => setCustomer(e.target.value)}
             />
           </div>
-          <div>
+          <div className="item">
+            <h4>Current Status</h4>
             <input
+              className="inputField"
               type="text"
               value={currentStatus}
               onChange={(e) => setCurrentStatus(e.target.value)}
             />
           </div>
-          <div>
+          <div className="item">
+            <h4>SDM</h4>
             <input
+              className="inputField"
+              type="text"
+              value={sdm}
+              onChange={(e) => setSDM(e.target.value)}
+            />
+          </div>
+          <div className="item">
+            <h4>Comment</h4>
+            <input
+              className="inputField"
               type="text"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
@@ -179,6 +206,17 @@ function App() {
           return (
             <div key={key} className={"column"}>
               <h3>{data.title}</h3>
+              <div className="itemList">
+                <div>Zendesk</div>
+                <div>Title</div>
+                <div>Description</div>
+                <div>Jira</div>
+                <div>Date Created</div>
+                <div>Customer</div>
+                <div>Current Status</div>
+                <div>Comment</div>
+              </div>
+
               <Droppable droppableId={key}>
                 {(provided, snapshot) => {
                   return (
@@ -205,10 +243,32 @@ function App() {
                                   {...provided.draggableProps}
                                   {...provided.dragHandleProps}
                                 >
-                                  {el.zendesk}
-                                  {el.title}
-                                  {el.description}
-                                  {el.jira}
+                                  <div className="itemdivs">
+                                    <div>
+                                      <div>{el.zendesk}</div>
+                                    </div>
+                                    <div>
+                                      <div>{el.title}</div>
+                                    </div>
+                                    <div>
+                                      <div>{el.description}</div>
+                                    </div>
+                                    <div>
+                                      <div>{el.jira}</div>
+                                    </div>
+                                    <div>
+                                      <div>{el.dateCreated}</div>
+                                    </div>
+                                    <div>
+                                      <div>{el.customer}</div>
+                                    </div>
+                                    <div>
+                                      <div>{el.currentStatus}</div>
+                                    </div>
+                                    <div>
+                                      <div>{el.comment}</div>
+                                    </div>
+                                  </div>
                                 </div>
                               );
                             }}

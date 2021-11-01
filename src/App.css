@@ -30,7 +30,6 @@
   .column {
     flex-direction: column;
     display: flex;
-    justify-content: center;
   }
 
   .column h3 {
@@ -38,7 +37,7 @@
   }
 
   #High div {
-    background-color: red;
+    background-color: tomato;
   }
 
   #Medium div {
