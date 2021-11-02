@@ -1,0 +1,96 @@
+.mainContainer {
+  align-items: center;
+  border: 1px solid red;
+  width: 100%;
+  background: #0077b5;
+}
+
+.signupContainer {
+  justify-content: center;
+  align-items: center;
+}
+
+.containersign {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signupTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6ede8;
+  width: 60%;
+  margin-top: 45px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.inputFields {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.inputFields div h4,
+.customerContainer div h4 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 20px;
+}
+
+.inputFields div input,
+.customerInputs div input {
+  height: 45px;
+  width: 300px;
+}
+
+.customerInputs div input {
+  margin: 10px 10px;
+}
+
+.customerContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.customerInputs {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.submitBtn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.submitBtn button {
+  margin-top: 10px;
+  height: 30px;
+  width: 150px;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.titleSign {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 30px;
+}
+
+.signupTitle div p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.form-input {
+  font-size: 20px;
+}

@@ -1,0 +1,84 @@
+.typewriter {
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  background-color: #fbfbfb;
+}
+
+.heading {
+  margin-left: 40px;
+  text-align: center;
+  padding-right: 10px;
+}
+.heading p {
+  color: #0077b5;
+  font-size: 20px;
+}
+.h1head {
+  color: #0077b5;
+  font-size: 50px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+.navBarContainer {
+  display: flex;
+}
+.containDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.credDiv {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.navbtn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  background-color: #538fbe;
+  padding: 15px 40px;
+  font-size: 20px;
+  border: 1px solid #2d6898;
+  margin: 0px 20px;
+  border-radius: 10px;
+}
