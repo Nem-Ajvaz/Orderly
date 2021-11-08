@@ -323,7 +323,7 @@ function Priority() {
                                     <div>{el.sdm}</div>
                                     <div>{el.comment}</div>
 
-                                    <Link to="/priorities/:id">Edit</Link>
+                                    <Link to={`/priority/${el.id}`}>Edit</Link>
                                   </div>
                                 </div>
                               );

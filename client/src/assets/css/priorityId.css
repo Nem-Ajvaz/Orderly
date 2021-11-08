@@ -44,37 +44,8 @@ code {
   text-align: center;
 }
 
-#High div {
-  background-color: #ed4d4d;
-}
-
-#Medium div {
-  background-color: orange;
-}
-
-#Low div {
-  background-color: #5e9e72;
-}
-
 #edit {
   color: white;
-}
-
-#Done div {
-  background-color: #cccccc;
-  text-decoration: line-through;
-}
-
-#High div div,
-#Medium div div,
-#Low div div,
-#Done div div {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-#Done {
-  margin-bottom: 50px;
 }
 
 .iteminput {
@@ -89,39 +60,12 @@ code {
   justify-content: space-evenly;
 }
 
-.mainContainer {
-  height: 710px;
-}
-
-.itemList {
-  border: 2px solid black;
-  margin: 3px 0px;
-  height: 35px;
-}
-
-.itemList div {
-  width: 10%;
-}
-
-.itemdivs,
-.itemList {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  border: 2px solid black;
-  margin: 3px 0px;
-}
-.itemdivs div,
-.itemdivs a {
-  width: 10%;
-}
-
-.itemAdd {
+.itemUpdate {
   display: flex;
   justify-content: center;
 }
 
-.itemAdd button {
+.itemUpdate button {
   height: 30px;
   width: 120px;
   margin-top: 40px;

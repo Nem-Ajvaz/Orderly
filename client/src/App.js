@@ -51,7 +51,7 @@ function App() {
           <Route exact path="/signup">
             <Signup />
           </Route>
-          <Route exact path="priority/:id">
+          <Route exact path="/priority/:id">
             <Priority />
           </Route>
         </div>
