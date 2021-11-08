@@ -34,14 +34,15 @@ code {
   flex-direction: column;
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 }
 
-.column h3 {
+.cloumn n .column h3 {
   text-align: center;
 }
 
 #High div {
-  background-color: red;
+  background-color: #ed4d4d;
 }
 
 #Medium div {
@@ -49,18 +50,29 @@ code {
 }
 
 #Low div {
-  background-color: none;
+  background-color: #5e9e72;
+}
+
+#Done div {
+  background-color: #cccccc;
+  text-decoration: line-through;
 }
 
 #High div div,
 #Medium div div,
-#Low div div {
+#Low div div,
+#Done div div {
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
+#Done {
+  margin-bottom: 50px;
+}
+
 .iteminput {
   text-align: center;
+  margin: 5px 15px;
 }
 
 .submitForm,
@@ -74,8 +86,35 @@ code {
   height: 710px;
 }
 
-.itemdivs {
+.itemList {
+  border: 2px solid black;
+  margin: 3px 0px;
+  height: 35px;
+}
+
+.itemList div {
+  width: 10%;
+}
+
+.itemdivs,
+.itemList {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  border: 2px solid black;
+  margin: 3px 0px;
+}
+.itemdivs div {
+  width: 10%;
+}
+
+.itemAdd {
+  display: flex;
+  justify-content: center;
+}
+
+.itemAdd button {
+  height: 30px;
+  width: 120px;
+  margin-top: 40px;
 }
