@@ -12,6 +12,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.priorityidTitleDiv h2 {
+  text-align: center;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -50,7 +53,7 @@ code {
 
 .iteminput {
   text-align: center;
-  margin: 5px 15px;
+  margin: 20px 15px;
 }
 
 .submitForm,
@@ -58,6 +61,7 @@ code {
   display: flex;
   justify-content: row;
   justify-content: space-evenly;
+  margin-bottom: 30px;
 }
 
 .itemUpdate {
@@ -69,4 +73,20 @@ code {
   height: 30px;
   width: 120px;
   margin-top: 40px;
+}
+
+.updateField {
+  height: 40px;
+  font-size: 15px;
+  padding-left: 10px;
+  width: 100%;
+}
+
+#description {
+  height: 40%;
+  width: 30%;
+}
+
+.changeStatus {
+  height: 40px;
 }

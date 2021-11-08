@@ -72,6 +72,8 @@ function Priority() {
       target: { value, name },
     } = event;
 
+    console.log(value);
+
     setFormState((prevState) => ({
       ...prevState,
       [name]: value,
@@ -79,7 +81,7 @@ function Priority() {
   };
 
   const handleDragEnd = async ({ destination, source, draggableId }) => {
-    console.log(destination, source, draggableId);
+    // console.log(destination, source, draggableId);
     try {
       if (
         !destination ||
@@ -119,7 +121,6 @@ function Priority() {
           },
         };
 
-        console.log(newState);
         return newState;
       });
     } catch (e) {}

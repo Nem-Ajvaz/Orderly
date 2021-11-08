@@ -101,6 +101,7 @@ code {
 
 .itemList div {
   width: 10%;
+  padding-top: 4px;
 }
 
 .itemdivs,
