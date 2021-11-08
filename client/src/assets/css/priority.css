@@ -1,0 +1,81 @@
+.priority {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.priority .column {
+  width: 95%;
+  text-align: center;
+}
+
+.editbtn {
+  background-color: green;
+}
+
+.droppable-col {
+  width: 100%;
+}
+.column {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+.column h3 {
+  text-align: center;
+}
+
+#High div {
+  background-color: red;
+}
+
+#Medium div {
+  background-color: orange;
+}
+
+#Low div {
+  background-color: none;
+}
+
+#High div div,
+#Medium div div,
+#Low div div {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.iteminput {
+  text-align: center;
+}
+
+.submitForm,
+.itemList {
+  display: flex;
+  justify-content: row;
+  justify-content: space-evenly;
+}
+
+.mainContainer {
+  height: 710px;
+}
+
+.itemdivs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

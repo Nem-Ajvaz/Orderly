@@ -19,15 +19,6 @@ const userSchema = new Schema({
     required: true,
     minlength: 8,
   },
-  customer: {
-    type: String,
-    required: true,
-  },
-  title: {
-    type: String,
-    required: true,
-    trim: true,
-  },
 });
 
 userSchema.pre("save", async function (next) {

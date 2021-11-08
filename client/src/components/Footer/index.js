@@ -3,7 +3,7 @@ import style from "../../assets/css/footer.css";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-light mb-4 py-3 flex-row align-center">
+    <footer>
       <div className="contact-links">
         <ul>
           <li className="footer-li">

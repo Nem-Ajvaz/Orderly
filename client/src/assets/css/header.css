@@ -70,7 +70,8 @@ header {
   flex-direction: row;
 }
 
-.navbtn {
+.navbtn,
+.navlink {
   display: inline-block;
   text-decoration: none;
   color: #fff;
@@ -81,4 +82,9 @@ header {
   border: 1px solid #2d6898;
   margin: 0px 20px;
   border-radius: 10px;
+}
+
+.navlink {
+  color: white;
+  text-decoration: none;
 }

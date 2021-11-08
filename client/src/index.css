@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+div.container {
+  flex: 1 1 auto;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  flex: 0 1 auto;
+}

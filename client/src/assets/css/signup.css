@@ -1,13 +1,18 @@
 .mainContainer {
   align-items: center;
-  border: 1px solid red;
+
   width: 100%;
   background: #0077b5;
 }
 
-.signupContainer {
+.signupcontainer {
   justify-content: center;
   align-items: center;
+  width: 80%;
+  margin-bottom: 35px;
+  background-color: #f6ede8;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .containersign {
@@ -23,13 +28,14 @@
   justify-content: center;
   align-items: center;
   background-color: #f6ede8;
-  width: 60%;
+  width: 80%;
   margin-top: 45px;
-  border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .inputFields {
+  border-radius: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -63,6 +69,7 @@
   font-size: 20px;
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .submitBtn {
@@ -78,6 +85,7 @@
   width: 150px;
   margin-bottom: 30px;
   font-size: 20px;
+  border-radius: 5px;
 }
 
 .titleSign {
@@ -93,4 +101,10 @@
 
 .form-input {
   font-size: 20px;
+}
+
+.formInput {
+  background-color: #f6ede8;
+  width: 100%;
+  border-radius: 5px;
 }
