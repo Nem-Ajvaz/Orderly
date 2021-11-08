@@ -3,6 +3,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import "../assets/css/priority.css";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import _ from "lodash";
+import { Link } from "react-router-dom";
 
 import { priorities as PRIORITIES } from "../utils/constants";
 import {
@@ -283,6 +284,7 @@ function Priority() {
                 <div>Customer</div>
                 <div>SDM</div>
                 <div>Comment</div>
+                <div id="edit">Edit</div>
               </div>
 
               <Droppable droppableId={key}>
@@ -320,6 +322,8 @@ function Priority() {
                                     <div>{el.customer}</div>
                                     <div>{el.sdm}</div>
                                     <div>{el.comment}</div>
+
+                                    <Link to="/priorities/:id">Edit</Link>
                                   </div>
                                 </div>
                               );

@@ -29,6 +29,9 @@ const Header = () => {
         <div className="containDiv">
           {Auth.loggedIn() ? (
             <div className="credDiv">
+              <div className="navname">
+                Welcome {Auth.getProfile().data.username}
+              </div>
               <button className="navbtn" onClick={logout}>
                 Logout
               </button>

@@ -53,6 +53,10 @@ code {
   background-color: #5e9e72;
 }
 
+#edit {
+  color: white;
+}
+
 #Done div {
   background-color: #cccccc;
   text-decoration: line-through;
@@ -104,7 +108,8 @@ code {
   border: 2px solid black;
   margin: 3px 0px;
 }
-.itemdivs div {
+.itemdivs div,
+.itemdivs a {
   width: 10%;
 }
 

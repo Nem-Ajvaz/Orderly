@@ -84,6 +84,17 @@ header {
   border-radius: 10px;
 }
 
+.navname {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 15px 40px;
+  font-size: 20px;
+  margin: 0px 20px;
+  border-radius: 10px;
+}
+
 .navlink {
   color: white;
   text-decoration: none;
