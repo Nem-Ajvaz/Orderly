@@ -27,10 +27,6 @@ const Priorityid = () => {
 
   const windowLocation = window.location.href.substr(31, 50);
 
-  const dataPriorities = data?.priorities.find(
-    (priorities) => priorities.id === windowLocation.trim()
-  );
-
   const [formState, setFormState] = useState(initialState);
 
   const handleInputChange = (event) => {
@@ -69,12 +65,16 @@ const Priorityid = () => {
   if (error) {
     return <p>Error...</p>;
   }
+
+  const dataPriorities = data?.priorities.find(
+    (priorities) => priorities.id === windowLocation.trim()
+  );
   return (
     <div className="priorityUpdateContainer">
       <div className="priorityidTitleDiv">
         <h2> --- {dataPriorities.title} ---</h2>
       </div>
-      <div>
+      <div classnaame>
         <form onSubmit={handleSubmit}>
           <div className="submitForm">
             <div className="iteminput">
