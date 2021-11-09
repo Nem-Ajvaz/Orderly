@@ -64,6 +64,10 @@ code {
   margin-bottom: 30px;
 }
 
+.submitForm {
+  width: 80%;
+}
+
 .itemUpdate {
   display: flex;
   justify-content: center;
