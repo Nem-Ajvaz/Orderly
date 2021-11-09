@@ -6,6 +6,7 @@ import { UPDATE_PRIORITY } from "../utils/mutations";
 import { QUERY_PRIORITIES } from "../utils/queries";
 import { priorities } from "../utils/constants";
 import { priorities as PRIORITIES } from "../utils/constants";
+import PriorityList from "../pages/PriorityList";
 
 const initialState = {
   id: "",
@@ -52,6 +53,7 @@ const Priorityid = () => {
         data: { editPriority },
       } = await mutation({ variables: formState });
       addItem();
+      this.props.history.push("/PriorityList");
     } catch (e) {
       console.log(e);
     }

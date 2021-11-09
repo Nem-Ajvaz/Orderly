@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
-import style from "../assets/css/login.css";
+import "../assets/css/login.css";
 
 import Auth from "../utils/auth";
 
@@ -43,8 +43,8 @@ const Login = (props) => {
     <main className="mainContainer">
       <div className="containersign">
         <div className="signupTitle">
-          <h4 className="card-header bg-dark text-light p-2">
-            Enter details below to login
+          <h4 className="loginHeaderTitle">
+            Enter your details to start prioritizing
           </h4>
           <div className="card-body">
             {data ? (
@@ -71,7 +71,7 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-primary"
+                  className="loginDetailsBtn"
                   style={{ cursor: "pointer" }}
                   type="submit"
                 >
