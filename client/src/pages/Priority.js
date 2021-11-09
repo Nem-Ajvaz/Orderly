@@ -62,17 +62,18 @@ const Priorityid = () => {
     return <p>Loading...</p>;
   }
 
-  if (error) {
-    return <p>Error...</p>;
-  }
-
   const dataPriorities = data?.priorities.find(
     (priorities) => priorities.id === windowLocation.trim()
   );
+
+  if (error || !dataPriorities) {
+    return <p>Error...</p>;
+  }
+
   return (
     <div className="priorityUpdateContainer">
       <div className="priorityidTitleDiv">
-        <h2> --- {dataPriorities.title} ---</h2>
+        <h2> --- Update your priority ---</h2>
       </div>
       <div classnaame>
         <form onSubmit={handleSubmit}>
