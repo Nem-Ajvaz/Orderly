@@ -39,6 +39,13 @@ const typeDefs = gql`
   }
 
   input EditPriorityInput {
+    id: ID!
+    zendesk: String
+    title: String
+    description: String
+    jira: String
+    dateCreated: String
+    customer: String
     sdm: String
     currentStatus: String
     comment: String

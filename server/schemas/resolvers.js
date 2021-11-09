@@ -5,11 +5,16 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     async priorities(root, args, ctx, info) {
-      if (!ctx.user) {
-        throw new Error("Unautherised");
-      }
+      // if (!ctx.user) {
+      //   throw new Error("Unautherised");
+      // }
 
-      const { _id } = ctx.user;
+      // console.log(ctx.user);
+
+      // const { _id } = ctx.user;
+      _id = "6189c44040fcbc63f2c57991";
+
+      // 6189c4ea8a5a4b6434d804b1
       return Priority.find({ userId: _id });
     },
   },
@@ -69,15 +74,38 @@ const resolvers = {
       return await Priority.create({ ...args.data, userId: user._id });
     },
     async editPriority(root, args, ctx, info) {
+      console.log(args);
       const {
-        data: { id, comments, currentStatus, sdm },
-      } = args;
+        zendesk,
+        title,
+        description,
+        jira,
+        dateCreated,
+        customer,
+        comment,
+        currentStatus,
+        sdm,
+      } = args.data;
 
-      if (!comments && !currentStatus && !sdm) {
+      if (
+        !comment &&
+        !currentStatus &&
+        !sdm &&
+        !zendesk &&
+        !title &&
+        !description &&
+        !jira &&
+        !dateCreated &&
+        !customer
+      ) {
         throw new Error("Invalid args");
       }
 
-      await Priority.findOneAndUpdate({ id }, {});
+      return await Priority.findOneAndUpdate(
+        { _id: args.data.id },
+        { ...args.data },
+        { new: true }
+      );
     },
     async changePriorityStatus(root, args, ctx, info) {
       const { data } = args;
