@@ -53,7 +53,6 @@ const Priorityid = () => {
         data: { editPriority },
       } = await mutation({ variables: formState });
       addItem();
-      this.props.history.push("/PriorityList");
     } catch (e) {
       console.log(e);
     }

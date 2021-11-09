@@ -5,16 +5,14 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     async priorities(root, args, ctx, info) {
-      // if (!ctx.user) {
-      //   throw new Error("Unautherised");
-      // }
+      if (!ctx.user) {
+        throw new Error("Unautherised");
+      }
 
-      // console.log(ctx.user);
+      console.log(ctx.user);
 
-      // const { _id } = ctx.user;
-      _id = "6189c44040fcbc63f2c57991";
+      const { _id } = ctx.user;
 
-      // 6189c4ea8a5a4b6434d804b1
       return Priority.find({ userId: _id });
     },
   },
