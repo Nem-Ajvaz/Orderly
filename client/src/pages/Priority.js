@@ -8,6 +8,7 @@ import { priorities } from "../utils/constants";
 import { priorities as PRIORITIES } from "../utils/constants";
 
 const initialState = {
+  id: "",
   zendesk: "",
   title: "",
   description: "",
@@ -44,6 +45,8 @@ const Priorityid = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    formState.id = windowLocation.trim();
+    console.log(formState);
     try {
       const {
         data: { editPriority },

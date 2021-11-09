@@ -45,7 +45,7 @@ export const UPDATE_PRIORITY = gql`
   ) {
     editPriority(
       data: {
-        id: _id
+        id: $id
         zendesk: $zendesk
         title: $title
         description: $description
