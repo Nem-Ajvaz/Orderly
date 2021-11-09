@@ -73,7 +73,7 @@ const Priorityid = () => {
   return (
     <div className="priorityUpdateContainer">
       <div className="priorityidTitleDiv">
-        <h2> --- Update your priority ---</h2>
+        <h2> --- {dataPriorities.title} ---</h2>
       </div>
       <div classnaame>
         <form onSubmit={handleSubmit}>
