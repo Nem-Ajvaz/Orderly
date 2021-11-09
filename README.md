@@ -63,7 +63,7 @@ Sign up and get your priorities in order.
 ## Demo of APP :
 
 <p style="text-align: center">
-<img src="../assets/images/Orderlyuse.gif" alt="Orderly" height="400" width="550" />
+<img src="client/src/assets/images/Orderlyuse.gif" alt="Orderly" height="400" width="550" />
 </p>
 
 ---
